@@ -1,0 +1,70 @@
+<!-- Hello Sha! -->
+<!-- doctype-->
+<html>
+  <head>
+    <title>
+      Demo WebPage
+    </title>
+    <style type="text/css">
+      #tweetsdiv {
+        width: 200px;
+        height:200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- My first WebPage! -->
+    <!-- <p>How many fingers am i holding</p> -->
+    <div id="timeTaken"></div>
+
+    <div id="tweetsdiv"></div>
+
+    <p>
+      <!-- <input type="text" id="guess" /><button id="checkGuess">Guess:</button> -->
+    </p>
+    <script type="text/javascript">
+      // alert(Math.floor(Math.random() * 5));
+      var tweetString = "";
+      var tweets = ["hi", "sha", "kota", "likes coffee"];
+      // document.getElementById("checkGuess").onclick = function() {
+      // var randomNumber = Math.random();
+      // randomNumber = randomNumber * 6;
+      // randomNumber = Math.floor(randomNumber);
+      // if (document.getElementById("guess").value == randomNumber) {
+      //   alert("Well done You Got it");
+      // } else {
+      //   alert("nope! You got "+ randomNumber);
+      // }
+
+      // };
+      // for (var i = 0; i < tweets.length; i++) {
+      //   tweetString += "<p>" + tweets[i] + "</p>";
+      //   // alert(tweets[i]);
+      // }
+      // document.getElementById("tweetsdiv").innerHTML = tweetString;
+      // function alertMe()
+      // {
+      //   alert("Hi Sha here");
+
+      // }
+      // alertMe();
+      var start = new Date().getTime();
+      function MakeShapeAppear() {
+        document.getElementById("tweetsdiv").style.display = "block";
+        start = new Date().getTime();
+      }
+      function appearAfterDelay() {
+        setTimeout(MakeShapeAppear, Math.random() * 2000);
+      }
+      appearAfterDelay();
+      document.getElementById("tweetsdiv").onclick = function() {
+        document.getElementById("tweetsdiv").style.display = "none";
+        var end = new Date().getTime();
+        var timeTaken = (end - start) / 1000;
+        document.getElementById("timeTaken").innerHTML = timeTaken + "s";
+        appearAfterDelay();
+      };
+    </script>
+  </body>
+</html>
